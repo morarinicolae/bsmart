@@ -1,0 +1,458 @@
+/*
+ * BSmart website styles
+ * A modern, luxurious palette of dark blue and mustard/lime green colours.
+ */
+
+/* CSS Variables for easy palette changes */
+:root {
+  --color-primary: #0b2a45; /* deep blue background */
+  --color-secondary: #f5b400; /* mustard accent */
+  --color-accent: #88c23b; /* lime green accent */
+  --color-light: #f5f5f5;
+  --color-dark: #0b2a45;
+  --color-text: #183a5a;
+  --color-background: #ffffff;
+  --transition-speed: 0.4s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  scroll-behavior: smooth;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(11, 42, 69, 0.9);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: transform var(--transition-speed) ease;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  margin-right: 0.5rem;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-secondary);
+}
+
+nav ul {
+  display: flex;
+  gap: 1.2rem;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-light);
+  font-weight: 600;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-secondary);
+  transition: width var(--transition-speed) ease;
+}
+
+nav a:hover::after,
+nav a:focus::after {
+  width: 100%;
+}
+
+/* Language Switcher */
+.lang-switcher {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.lang-btn {
+  background-color: transparent;
+  border: 1px solid var(--color-secondary);
+  color: var(--color-secondary);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease;
+}
+
+.lang-btn.active,
+.lang-btn:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-dark);
+}
+
+/* Hero Section */
+.hero-section {
+  padding-top: 100px; /* offset for fixed header */
+  background-color: var(--color-primary);
+  color: var(--color-light);
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 3rem 0;
+}
+
+.hero-content .text-area {
+  flex: 1 1 50%;
+  padding-right: 2rem;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-secondary);
+}
+
+.hero-content .subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.primary-btn {
+  display: inline-block;
+  background-color: var(--color-secondary);
+  color: var(--color-dark);
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.primary-btn:hover {
+  background-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.hero-content .image-area {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content .image-area img {
+  max-width: 100%;
+  height: auto;
+  transform: scale(1);
+  transition: transform var(--transition-speed) ease;
+}
+
+.hero-content .image-area img:hover {
+  transform: scale(1.05);
+}
+
+/* Sections */
+.section {
+  padding: 4rem 0;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--color-primary);
+}
+
+.section-text {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* Services */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+}
+
+.service-card {
+  background-color: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.service-card i {
+  font-size: 2rem;
+  color: var(--color-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+}
+
+.service-card p {
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* CRM Section */
+.crm-section {
+  background-color: #f0f4f8;
+}
+
+.crm-content {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.crm-text {
+  flex: 1 1 50%;
+}
+
+.crm-image {
+  flex: 1 1 50%;
+  text-align: center;
+}
+
+.crm-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.crm-features {
+  margin-top: 1rem;
+  list-style: none;
+}
+
+.crm-features li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.crm-features li::before {
+  content: '\f058'; /* Font Awesome check-circle */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-secondary);
+}
+
+/* Chatbots Section */
+.chatbots-section {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+}
+
+.chatbots-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.chatbots-image {
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.chatbots-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.chatbots-text {
+  flex: 1 1 60%;
+}
+
+.extra-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.extra-card {
+  flex: 1 1 30%;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  color: var(--color-light);
+  text-align: center;
+  transition: background-color var(--transition-speed) ease;
+}
+
+.extra-card:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.extra-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  color: var(--color-secondary);
+}
+
+.extra-card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: #f9fafb;
+}
+
+.contact-form {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-row input,
+.contact-form textarea {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-form .btn {
+  align-self: flex-start;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  padding: 1rem 0;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer a {
+  color: var(--color-secondary);
+  margin-left: 1rem;
+  font-size: 1.2rem;
+  transition: color var(--transition-speed) ease;
+}
+
+.footer a:hover {
+  color: var(--color-accent);
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive rules */
+@media (max-width: 768px) {
+  nav ul {
+    display: none; /* hide nav on small screens for simplicity */
+  }
+  .lang-switcher {
+    display: none;
+  }
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-content .text-area {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  .crm-content,
+  .chatbots-content {
+    flex-direction: column;
+  }
+  .form-row {
+    flex-direction: column;
+  }
+}
