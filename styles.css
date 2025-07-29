@@ -127,24 +127,9 @@ nav a:focus::after {
 
 /* Hero Section */
 .hero-section {
-  position: relative;
   padding-top: 100px; /* offset for fixed header */
   background-color: var(--color-primary);
   color: var(--color-light);
-}
-
-.network-overlay {
-  position: absolute;
-  inset: 0;
-  color: rgba(255, 255, 255, 0.4);
-  pointer-events: none;
-  opacity: 0.5;
-}
-
-.network-overlay svg {
-  width: 100%;
-  height: 100%;
-  display: block;
 }
 
 .hero-content {
