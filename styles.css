@@ -205,6 +205,14 @@ nav a:focus::after {
   transform: scale(1.05);
 }
 
+/* Generic styling for all images */
+.professional-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
 /* Sections */
 .section {
   padding: 4rem 0;
